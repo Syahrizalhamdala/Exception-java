@@ -1,194 +1,159 @@
-# LAPORAN PRAKTIKUM
+# 📘 LAPORAN ANALISIS
 
 ## EXCEPTION HANDLING PADA JAVA
 
-### Nama : Syahrizal Hamdala
+---
 
-### NIM : (Isi NIM kamu)
+## 🧑‍💻 Identitas
 
-### Kelas : (Isi Kelas kamu)e
+* **Nama**: Syahrizal Hamdala
+* **Program Studi**: Teknik Informatika
+* **Mata Kuliah**: Pemrograman Berorientasi Objek
 
 ---
 
-## I. TUJUAN PRAKTIKUM
+## 📌 Pendahuluan
 
-1. Memahami konsep exception handling pada Java.
-2. Mengetahui jenis-jenis exception yang terjadi saat runtime.
-3. Memahami penggunaan try, catch, throw, throws, dan finally.
-4. Mampu menangani error agar program tidak berhenti secara tiba-tiba.
+Exception Handling merupakan mekanisme dalam bahasa pemrograman Java yang digunakan untuk menangani kesalahan (error) yang terjadi saat program dijalankan (runtime). Dengan adanya exception handling, program dapat tetap berjalan tanpa mengalami crash secara tiba-tiba.
 
 ---
 
-## II. DASAR TEORI
+## 🎯 Tujuan
 
-Exception adalah suatu kondisi error yang terjadi saat program dijalankan (runtime). Java menyediakan mekanisme penanganan error menggunakan exception handling agar program tetap berjalan normal.
+* Memahami konsep exception handling dalam Java
+* Mengetahui jenis-jenis error pada runtime
+* Mampu menggunakan try, catch, throw, throws, dan finally
+* Menganalisis berbagai kasus exception
+
+---
+
+## 📚 Dasar Teori
 
 Beberapa keyword penting dalam exception handling:
 
-* **try**: digunakan untuk membungkus kode yang berpotensi error
-* **catch**: digunakan untuk menangkap dan menangani error
-* **throw**: digunakan untuk melempar exception secara manual
-* **throws**: digunakan untuk mendeklarasikan exception pada method
-* **finally**: blok yang selalu dijalankan
+* **try** → Membungkus kode yang berpotensi error
+* **catch** → Menangkap dan menangani error
+* **throw** → Melempar exception secara manual
+* **throws** → Mendeklarasikan exception pada method
+* **finally** → Blok yang selalu dijalankan
 
 ---
 
-## III. HASIL DAN ANALISA
+## 🔍 Analisis Percobaan
 
-### Percobaan 1
+### 🔹 Percobaan 1
 
-**Error:** ArrayIndexOutOfBoundsException
-**Analisa:**
-Terjadi karena mengakses array di luar batas indeks. Array berukuran 5 hanya memiliki indeks 0–4, tetapi program mengakses indeks ke-5.
-
-**Perbaikan:**
-Menggunakan try-catch agar error dapat ditangani dan program tidak berhenti.
+Terjadi error `ArrayIndexOutOfBoundsException` karena akses indeks array melebihi batas.
+Solusi menggunakan try-catch untuk menangani error tersebut.
 
 ---
 
-### Percobaan 2
+### 🔹 Percobaan 2
 
-**Error:** ArrayIndexOutOfBoundsException
-**Analisa:**
-Perulangan melebihi jumlah elemen array.
-
-**Perbaikan:**
-Exception ditangani menggunakan try-catch dan indeks di-reset sehingga program tetap berjalan.
+Error terjadi karena perulangan melebihi jumlah elemen array.
+Dengan try-catch, program dapat mengatur ulang indeks dan tetap berjalan.
 
 ---
 
-### Percobaan 3
+### 🔹 Percobaan 3
 
-**Error:** ArithmeticException (pembagian dengan nol)
-**Analisa:**
-Pembagian bilangan dengan nol tidak diperbolehkan dalam Java.
-
-**Perbaikan:**
-Menggunakan try-catch untuk menangani error tersebut.
-Penggunaan catch yang lebih spesifik (ArithmeticException) lebih disarankan.
+Terjadi `ArithmeticException` akibat pembagian dengan nol.
+Penggunaan catch yang spesifik lebih disarankan dibanding umum.
 
 ---
 
-### Percobaan 4
+### 🔹 Percobaan 4
 
-**Error:**
+Terdapat dua kemungkinan error:
 
 * ArithmeticException
 * ArrayIndexOutOfBoundsException
 
-**Analisa:**
-Urutan kode mempengaruhi error yang terjadi. Java hanya mengeksekusi sampai error pertama ditemukan.
-
-**Perbaikan:**
-Menukar urutan kode agar error tertentu dapat diuji terlebih dahulu.
+Urutan kode menentukan error mana yang muncul terlebih dahulu.
 
 ---
 
-### Percobaan 5
+### 🔹 Percobaan 5
 
-**Analisa:**
-Menunjukkan penggunaan method pada exception:
+Menunjukkan penggunaan:
 
-* getMessage() → menampilkan pesan error
-* printStackTrace() → menampilkan detail error
-* printStackTrace(System.out) → menampilkan ke output
+* `getMessage()`
+* `printStackTrace()`
 
-**Kesimpulan:**
-Exception dapat digunakan untuk debugging program.
+Digunakan untuk debugging dan mengetahui detail error.
 
 ---
 
-### Percobaan 6
+### 🔹 Percobaan 6
 
-**Analisa:**
-Menggunakan keyword throw untuk membuat exception secara manual.
-Setelah throw dijalankan, program langsung berpindah ke catch.
-
----
-
-### Percobaan 7
-
-**Analisa:**
-Menampilkan berbagai informasi exception seperti:
-
-* getMessage()
-* toString()
-* printStackTrace()
-
-**Kesimpulan:**
-Exception dapat memberikan informasi lengkap terkait error.
+Menggunakan `throw` untuk membuat exception secara manual.
+Setelah throw dijalankan, program langsung masuk ke catch.
 
 ---
 
-### Percobaan 8
+### 🔹 Percobaan 7
 
-**Analisa:**
-Menggunakan keyword throws untuk melempar exception ke method pemanggil.
+Menampilkan informasi detail dari exception:
 
-Perbedaan:
-
-* Tanpa try-catch → error dilempar keluar
-* Dengan try-catch → error ditangani
-
-Finally akan selalu dijalankan.
+* Pesan error
+* Nama exception
+* Stack trace
 
 ---
 
-### Percobaan 9
+### 🔹 Percobaan 8
 
-**Analisa:**
+Menggunakan `throws` untuk melempar exception ke method pemanggil.
+Ditunjukkan juga penggunaan `finally` yang selalu dijalankan.
+
+---
+
+### 🔹 Percobaan 9
+
 Menunjukkan propagasi exception dari method ke method lain.
-Jika string kosong, maka exception akan dilempar dan ditangkap di main.
-
-Finally tetap dijalankan.
+Exception dilempar dari method dan ditangkap di main.
 
 ---
 
-### Percobaan 10
+### 🔹 Percobaan 10
 
-**Analisa:**
-Menunjukkan penggunaan exception pada operasi file.
-IOException dapat terjadi saat membaca/menulis file.
-
-**Kesimpulan:**
-File handling wajib menggunakan exception handling.
+Menangani error pada file handling menggunakan `IOException`.
+Penting untuk mencegah crash saat operasi file.
 
 ---
 
-### Percobaan 11
+### 🔹 Percobaan 11
 
-**Analisa:**
-Membuat custom exception dengan extends Throwable.
-
-**Kesimpulan:**
-Programmer dapat membuat exception sendiri sesuai kebutuhan.
+Membuat custom exception dengan `extends Throwable`.
+Digunakan untuk membuat error sesuai kebutuhan.
 
 ---
 
-### Percobaan 12
+### 🔹 Percobaan 12
 
-**Analisa:**
-Custom exception dengan extends Exception.
-Exception dilempar saat kondisi tertentu terpenuhi.
-
-**Kesimpulan:**
-Digunakan untuk validasi kondisi khusus dalam program.
+Custom exception dengan `extends Exception`.
+Digunakan untuk validasi kondisi tertentu dalam program.
 
 ---
 
-## IV. KESIMPULAN
+## ✅ Kesimpulan
 
-1. Exception handling digunakan untuk menangani error saat runtime.
-2. Try-catch dapat mencegah program berhenti secara tiba-tiba.
-3. Throw digunakan untuk membuat exception secara manual.
-4. Throws digunakan untuk melempar exception ke method lain.
-5. Finally selalu dijalankan meskipun terjadi error.
-6. Exception dapat berupa built-in maupun custom.
+* Exception handling sangat penting untuk menjaga kestabilan program
+* Try-catch dapat mencegah program berhenti secara tiba-tiba
+* Throw dan throws digunakan untuk mengelola exception
+* Finally selalu dijalankan
+* Exception dapat dibuat sendiri (custom exception)
 
 ---
 
-## V. LAMPIRAN
+## 📂 Lampiran
 
-(Lampirkan source code dan link GitHub/GitLab di sini)
+Silakan lihat source code pada repository ini untuk implementasi lengkap setiap percobaan.
+
+---
+
+## ⭐ Penutup
+
+Laporan ini dibuat sebagai bagian dari praktikum pemrograman Java untuk memahami konsep exception handling secara menyeluruh.
 
 ---
